@@ -1,0 +1,26 @@
+[
+{
+    "name": {
+        "lastName": "Smith",
+        "firstName": "Bob",
+        "lastNameJapanese": "スミス",
+        "firstNameJapanese": "ボブ"
+    },
+    "position": 
+        {"english": "PD",
+         "japanese": "PD"
+        },
+    "period": {
+        "join": {
+            "year": 2024,
+            "month": 4
+        },
+        "leave": {
+            "year": 2027,
+            "month": 9
+        }
+        },
+    "roomNumber": "912",
+    "email": "bob"
+}
+]

@@ -68,11 +68,12 @@ git push origin main
 
 # 名簿
 
-名簿は以下の3つのファイルによって管理、生成、表示されます:
+名簿のデータは`data`フォルダに格納されています。
+`data`フォルダには`json`形式のファイルたち`staffs.json`,`postdocs.json`,`students.json`があり、この順で読まれます。各ファイルの中では上から順に並びます。
 
-- members.json: このファイルは、メンバーの情報を格納します。
-- members.js: members.jsonの情報を読み込んで、名簿のhtml table をjavascriptで生成します。この処理は閲覧者のブラウザで行われます。
-- members.html: members.jsを読んでテーブルを読み込み表示します。
+このデータは以下の2つのファイルによって処理されて表に変換されます:
+- `members.js`: `data`フォルダの情報を読み込んで、名簿のhtml table をjavascriptで生成します。この処理は閲覧者のブラウザで行われます。
+- `members.html`: `members.js`を呼んでテーブルを読み込み表示します。
 
 名簿の更新は*members.jsonを編集する*ことによって行います。
 自分が何をやっているかわかっていない限り、**members.jsやmembers.htmlを編集しないでください**。

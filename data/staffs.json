@@ -1,0 +1,23 @@
+[
+{
+    "name": {
+        "lastName": "Tanaka",
+        "firstName": "Hanako",
+        "lastNameJapanese": "田中",
+        "firstNameJapanese": "花子"
+    },
+    "position": {
+        "english": "Professor",
+        "japanese": "教授"
+    },
+    "period": {
+        "join": {
+            "year": 2020,
+            "month": 4
+        },
+        "leave": null
+    },
+    "roomNumber": "911",
+    "email": "hanako"
+}
+]

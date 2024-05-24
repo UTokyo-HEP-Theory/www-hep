@@ -1,0 +1,41 @@
+[
+{
+    "name": {
+        "lastName": "Yamada",
+        "firstName": "Taro",
+        "lastNameJapanese": "山田",
+        "firstNameJapanese": "太郎"
+    },
+    "position": null,
+    "period": {
+        "join": {
+            "year": 2020,
+            "month": 4
+        },
+        "leave": null
+    },
+    "roomNumber": "911",
+    "email": "taro"
+},
+{
+    "name": {
+        "lastName": "Exception",
+        "firstName": "John",
+        "lastNameJapanese": "例外",
+        "firstNameJapanese": "事例"
+    },
+    "position": {
+        "english": "M3",
+        "japanese": "M3"
+    },
+    "period": {
+        "join": {
+            "year": 2020,
+            "month": 4
+        },
+        "leave": null
+    },
+    "roomNumber": "911",
+    "email": "john"
+}
+]
