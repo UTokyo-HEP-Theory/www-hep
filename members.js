@@ -24,6 +24,12 @@ function calculateGrade(joinYear, joinMonth) {
 
 // Function to check if a member should be displayed
 function shouldDisplay(member) {
+
+    //exclude field
+    if(member.exclude){
+        return false;
+    }
+    
     // デバッグ用クエリパラメータの取得
     const urlParams = new URLSearchParams(window.location.search);
     const dateParam = urlParams.get('date');
