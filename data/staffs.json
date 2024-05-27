@@ -18,6 +18,7 @@
         "leave": null
     },
     "roomNumber": "911",
-    "email": "hanako"
+    "email": "hanako",
+    "websites": ["https://google.com","https://yahoo.com"]
 }
 ]

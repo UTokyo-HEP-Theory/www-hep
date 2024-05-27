@@ -87,6 +87,17 @@ Promise.all(promises).then(data => {
             nameCellJapanese.textContent = member.name.lastNameJapanese + ' ' + member.name.firstNameJapanese;
             row.appendChild(nameCellJapanese);
 
+            // If the member has websites, add a link emoji for each one
+            if (member.websites) {
+                member.websites.forEach(website => {
+                    const link = document.createElement('a');
+                    link.href = website;
+                    link.textContent = ' 🔗';
+                    link.style.textDecoration = 'none';
+                    nameCellJapanese.appendChild(link);
+                });
+            }
+
             const nameCellEnglish = document.createElement('td');
             nameCellEnglish.textContent = member.name.firstName + ' ' + member.name.lastName;
             row.appendChild(nameCellEnglish);

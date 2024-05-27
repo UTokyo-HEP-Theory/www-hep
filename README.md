@@ -27,7 +27,7 @@ Python3には組み込みのHTTPサーバーがあります。これを使用し
 python3 -m http.server
 ```
 
-この場合、サーバーはポート8000で起動します。ブラウザでhttp://localhost:8000にアクセスすると、サーバーの内容を見ることができます。
+この場合、サーバーはポート8000で起動します。ブラウザでhttp://localhost:8000 にアクセスすると、サーバーの内容を見ることができます。
 
 
 ## git add, commit, pushの使い方
@@ -128,7 +128,8 @@ git push origin main
             }
             },
         "roomNumber": "912",
-        "email": "bob"
+        "email": "bob",
+        "websites" : ["https://google.com","https://yahoo.com"]
     }
 ```
 
@@ -200,6 +201,7 @@ git push origin main
     - `leave`: メンバーが退グループした年と月を格納するオブジェクトです。まだ退会していない場合、このフィールドは`null`です。
 - `roomNumber`: メンバーの部屋番号です。
 - `email`: メンバーのメールアドレスのローカル部分です（@の前の部分）。
+- `websites`: メンバーのwebsiteを配列で指定します。(例: ["https://googl.com","https://yahoo.com"])。ない場合は書かないか、null。
 - `exclude`: true なら強制非表示 (通常含めない)
 
 
