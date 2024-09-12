@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Research Group</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Tokyo High Energy Physics Theory Group</title>
 </head>
 <body>
-    <div id="header-placeholder"></div>
-    
-    <main>
-        <h2 class="en">Welcome to Our Research Group</h2>
-        <h2 class="ja" style="display:none;">私たちの研究グループへようこそ</h2>
-        <!--<img src="images/your-image.jpg" alt="A descriptive text">-->
-        <p class="en">This is the homepage content.</p>
-        <p class="ja" style="display:none;">これはホームページの内容です。</p>
-    </main>
-    
-    <footer>
-        <p class="en">&copy; 2023 Research Group</p>
-        <p class="ja" style="display:none;">&copy; 2023 研究グループ</p>
-    </footer>
-    
-    <script src="js/loadHeader.js"></script>
-    <script src="js/languageToggle.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the user's browser language
+        const userLang = navigator.language || navigator.userLanguage;
+        
+        // Define your supported languages
+        const supportedLanguages = ['en', 'ja'];
+        
+        // Default language if the user's language is not supported
+        const defaultLang = 'en';
+        
+        // Extract the language code from the user's language
+        const lang = userLang.split('-')[0];
+        
+        // Check if the user's language is supported
+        const targetLang = supportedLanguages.includes(lang) ? lang : defaultLang;
+        
+        // Redirect the user to the appropriate language version
+        window.location.href = `/${targetLang}/index.html`;
+    });
+</script>
+
 </body>
 </html>

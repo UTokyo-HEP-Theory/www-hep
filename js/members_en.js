@@ -62,7 +62,7 @@ function shouldDisplay(member) {
 
 // ファイルのリスト
 //const files = ['data/staff.json', 'data/postdoc.json', 'data/students.json'];
-const files = ['data/staffs.json','data/postdocs.json','data/students.json'];
+const files = ['/data/staffs.json','/data/postdocs.json','/data/students.json'];
 
 // 各ファイルを非同期に読み込む
 const promises = files.map(file => fetch(file).then(response => response.json()));
@@ -82,31 +82,36 @@ Promise.all(promises).then(data => {
             // Create a new row
             const row = document.createElement('tr');
 
-            // Create cells for each property
-            const nameCellJapanese = document.createElement('td');
-            nameCellJapanese.textContent = member.name.lastNameJapanese + ' ' + member.name.firstNameJapanese;
-            row.appendChild(nameCellJapanese);
+            // Not display name in Japanese for english version
+             // Create cells for each property
+             //const nameCellJapanese = document.createElement('td');
+             //nameCellJapanese.textContent = member.name.lastNameJapanese + ' ' + member.name.firstNameJapanese;
+             //row.appendChild(nameCellJapanese);
 
             // If the member has websites, add a link emoji for each one
+
+            const nameCellEnglish = document.createElement('td');
+            nameCellEnglish.textContent = member.name.firstName + ' ' + member.name.lastName;
+            row.appendChild(nameCellEnglish);
+
+
+            // For English version the link is shown next to (English) name.
             if (member.websites) {
                 member.websites.forEach(website => {
                     const link = document.createElement('a');
                     link.href = website;
                     link.textContent = ' 🔗';
                     link.style.textDecoration = 'none';
-                    nameCellJapanese.appendChild(link);
+                    nameCellEnglish.appendChild(link);
                 });
             }
-
-            const nameCellEnglish = document.createElement('td');
-            nameCellEnglish.textContent = member.name.firstName + ' ' + member.name.lastName;
-            row.appendChild(nameCellEnglish);
 
             const positionCell = document.createElement('td');
             if (member.position === null) {
                 positionCell.textContent = calculateGrade(member.period.join.year, member.period.join.month);
             } else {
-                positionCell.textContent = member.position.japanese;
+                //positionCell.textContent = member.position.japanese;
+                positionCell.textContent = member.position.english;
             }
             row.appendChild(positionCell);
 

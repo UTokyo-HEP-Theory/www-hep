@@ -1,6 +1,76 @@
+
+body{
+    /* font */
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+}
+
+/* header */
+header {
+    border-bottom: 1px solid #ddd; /* 罫線の色とスタイルを指定 */
+    padding-bottom: 10px; /* 罫線とコンテンツの間にスペースを追加 */
+    margin-bottom: 20px; /* 罫線と次の要素の間にスペースを追加 */
+}
+
+/* footer */
+footer {
+    border-top: 1px solid #ddd; /* 罫線の色とスタイルを指定 */
+    padding-top: 10px; /* 罫線とコンテンツの間にスペースを追加 */
+    margin-top: 20px; /* 罫線と次の要素の間にスペースを追加 */
+}
+/* Reduce margin for h1 and h2 */
+h1, h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1{
+    color: #000080;
+}
+
+ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.3em;
+}
+
+li {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/* Add styles for language buttons */
+.lang-button {
+    width: 60px;
+    height: 30px;
+    margin: 2px 2px 5px 2px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.lang-button:hover {
+    background-color: #ddd;
+}
+
+.lang-button.current-lang {
+    background-color: #ccc;
+    cursor: default;
+    border: 1px solid #bbb;
+}
+
+.lang-button.current-lang:hover {
+    background-color: #ccc;
+}
+
+/* Table */
+
 table {
     width: 100%;
     border-collapse: collapse;
+    margin: 10px 0 10px 0;
 }
 
 th, td {

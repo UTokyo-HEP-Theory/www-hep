@@ -62,7 +62,7 @@ function shouldDisplay(member) {
 
 // ファイルのリスト
 //const files = ['data/staff.json', 'data/postdoc.json', 'data/students.json'];
-const files = ['data/staffs.json','data/postdocs.json','data/students.json'];
+const files = ['/data/staffs.json','/data/postdocs.json','/data/students.json'];
 
 // 各ファイルを非同期に読み込む
 const promises = files.map(file => fetch(file).then(response => response.json()));
