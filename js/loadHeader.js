@@ -15,46 +15,50 @@ document.addEventListener("DOMContentLoaded", function() {
         const languageSwitchContainer = document.getElementById('language-switch');
         if (!languageSwitchContainer) return;
 
-        const url = new URL(window.location.href);
-        const pathParts = url.pathname.split('/');
         const supportedLanguages = ['en', 'ja'];
-        let currentLang = pathParts[1];
-        if (!supportedLanguages.includes(currentLang)) {
-            currentLang = 'en';
+        const url = new URL(window.location.href);
+        
+        // 正規表現を使用して言語コードを検出
+        const langRegex = new RegExp(`^/(${supportedLanguages.join('|')})(/|$)`);
+        const match = url.pathname.match(langRegex);
+        
+        let currentLang = 'en'; // デフォルトの言語を設定
+        if (match) {
+            currentLang = match[1];
         }
-
+        
         const targetLang = currentLang === 'en' ? 'ja' : 'en';
-        let newPathParts = [...pathParts];
-        if (supportedLanguages.includes(newPathParts[1])) {
-            newPathParts[1] = targetLang;
-        } else {
-            newPathParts.splice(1, 0, targetLang);
+        
+        // 新しいパスを生成
+        let newPath = url.pathname.replace(langRegex, `/${targetLang}/`);
+        if (!match) {
+            newPath = `/${targetLang}/${url.pathname}`; //pathにjaもenも含まれていなかった場合の fallback だが多分うまくない。
         }
-        const newPath = newPathParts.join('/');
         const newUrl = new URL(newPath, url.origin);
-
-        // Create Japanese button
+        
+        // 日本語ボタンを作成
         const jpButton = document.createElement('button');
         jpButton.textContent = '日本語';
         jpButton.className = 'lang-button';
-        if (currentLang !== 'ja') {
-            jpButton.onclick = () => window.location.href = newUrl.toString().replace('/en/', '/ja/');
-        } else {
+        if (currentLang === 'ja') {
             jpButton.classList.add('current-lang');
+        } else {
+            jpButton.onclick = () => window.location.href = newUrl.toString();
         }
-
-        // Create English button
+        
+        // 英語ボタンを作成
         const enButton = document.createElement('button');
         enButton.textContent = 'English';
         enButton.className = 'lang-button';
-        if (currentLang !== 'en') {
-            enButton.onclick = () => window.location.href = newUrl.toString().replace('/ja/', '/en/');
-        } else {
+        if (currentLang === 'en') {
             enButton.classList.add('current-lang');
+        } else {
+            enButton.onclick = () => window.location.href = newUrl.toString();
         }
-
-        // Append buttons to the container
-        languageSwitchContainer.appendChild(jpButton);
-        languageSwitchContainer.appendChild(enButton);
+        
+        // ボタンをヘッダーに追加
+        const header = document.querySelector('header');
+        header.appendChild(jpButton);
+        header.appendChild(enButton);
     }
 });
