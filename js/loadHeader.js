@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const url = new URL(window.location.href);
         
         // 正規表現を使用して言語コードを検出
-        const langRegex = new RegExp(`^/(${supportedLanguages.join('|')})(/|$)`);
+        const langRegex = new RegExp(`/(${supportedLanguages.join('|')})(/|$)`);
         const match = url.pathname.match(langRegex);
 
         console.log('URL Pathname:', url.pathname); // デバッグ用ログ
@@ -33,9 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const targetLang = currentLang === 'en' ? 'ja' : 'en';
         
         // 新しいパスを生成
-        let newPath = url.pathname.replace(langRegex, `/${targetLang}/`);
-        if (!match) {
-            newPath = `/${targetLang}/${url.pathname}`; //pathにjaもenも含まれていなかった場合の fallback だが多分うまくない。
+        let newPath;
+        if (match) {
+            newPath = url.pathname.replace(langRegex, `/${targetLang}$2`);
+        } else {
+            newPath = url.pathname.replace(/^\/?/, `/${targetLang}/`); //多分意味ないfallback
         }
         const newUrl = new URL(newPath, url.origin);
 
