@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // 正規表現を使用して言語コードを検出
         const langRegex = new RegExp(`^/(${supportedLanguages.join('|')})(/|$)`);
         const match = url.pathname.match(langRegex);
+
+        console.log('URL Pathname:', url.pathname); // デバッグ用ログ
+        console.log('Match Result:', match); // デバッグ用ログ
         
         let currentLang = 'en'; // デフォルトの言語を設定
         if (match) {
@@ -35,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
             newPath = `/${targetLang}/${url.pathname}`; //pathにjaもenも含まれていなかった場合の fallback だが多分うまくない。
         }
         const newUrl = new URL(newPath, url.origin);
+
+        console.log('New URL:', newUrl.toString()); // デバッグ用ログ
         
         // 日本語ボタンを作成
         const jpButton = document.createElement('button');
