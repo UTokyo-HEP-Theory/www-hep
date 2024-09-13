@@ -283,3 +283,7 @@ localhost:8000でホストしているなら、
 `http://localhost:8000/members.html?date=2022-12-31` のようにします。 
 
 *注意:現在の仕様では本番環境でもクエリパラメーターが使えてしまいます。どっちにしろ非表示になっているレコードもjsonを取得された時点で見えるので、情報保護の観点からはより悪くはなってないと思います。
+
+# 参照用旧サイト
+英語: https://www-hep.phys.s.u-tokyo.ac.jp/english/noframe.shtml
+すごい古い日本語: https://www-hep.phys.s.u-tokyo.ac.jp/japanese/
