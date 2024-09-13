@@ -1,3 +1,10 @@
+// 各居室の電話番号を格納する辞書
+const roomPhoneNumbers = {
+    911: 4137,
+    920: 4139,
+    921: 4138
+};
+
 // Function to calculate numerical grade based on join date
 function calculateGradeNum(joinYear, joinMonth) {
     // デバッグ用クエリパラメータの取得
@@ -110,10 +117,24 @@ Promise.all(promises).then(data => {
             }
             row.appendChild(positionCell);
 
+            // room number
+
             const roomCell = document.createElement('td');
             roomCell.textContent = member.roomNumber;
             row.appendChild(roomCell);
 
+            //phone number 
+            const phoneCell = document.createElement('td');
+            if (!(member.phone == null)) {
+                phoneCell.textContent = member.phone;
+            } else if (roomPhoneNumbers.hasOwnProperty(member.roomNumber)) {
+                phoneCell.textContent = roomPhoneNumbers[member.roomNumber];
+            } else {
+                phoneCell.textContent = '';
+            }
+            row.appendChild(phoneCell);
+
+            //email
             const emailCell = document.createElement('td');
             emailCell.textContent = member.email;
             row.appendChild(emailCell);

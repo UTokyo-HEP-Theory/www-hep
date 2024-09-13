@@ -14,6 +14,7 @@
             "leave": null
         },
         "roomNumber": "914",
+        "phone": "4180",
         "email": "matsuo",
         "websites": [
             "https://www-hep.phys.s.u-tokyo.ac.jp/~matsuo/"
@@ -34,6 +35,7 @@
             "leave": null
         },
         "roomNumber": "917",
+        "phone": "4135",
         "email": "moroi",
         "websites": [
             "https://www-hep.phys.s.u-tokyo.ac.jp/~moroi/"
@@ -54,6 +56,7 @@
             "leave": null
         },
         "roomNumber": "916",
+        "phone": "7640",
         "email": "hama",
         "websites": [
             "https://www-hep.phys.s.u-tokyo.ac.jp/~hama/welcome.html"
@@ -128,6 +131,7 @@
             "leave": null
         },
         "roomNumber": "",
+        "phone": "4017",
         "email": "shimasaki.marina@mail.u-tokyo.ac.jp",
         "websites": []
     }
