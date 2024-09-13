@@ -240,10 +240,23 @@ git push origin main
         - `month`: 加入した月です。
     - `leave`: メンバーが退グループした年と月を格納するオブジェクトです。まだ退会していない場合、このフィールドは`null`です。例えば2030年3月と指定しておくと2030年4月1日に非表示に切り替わります。
 - `roomNumber`: メンバーの部屋番号です。
+- `phone`: メンバーの電話番号です。教授, 准教授, 秘書以外は*部屋番号から生成するので入力しないでください。*
 - `email`: メンバーのメールアドレスのローカル部分です（@の前の部分）。
 - `websites`: メンバーのwebsiteを配列で指定します。(例: ["https://googl.com","https://yahoo.com"])。ない場合は書かないか、null。
 - `exclude`: true なら強制非表示 (通常レコードに含めない)
 
+## 電話番号の変更の仕方
+- 教授, 准教授, 秘書: `staffs.json` の `phone` fieldを直接書き換えてください。
+- それ以外: `members_ja.js` と `members_en.js` の先頭に以下のように部屋番号と電話番号の対応が書かれているので、それを変更してください。
+
+```javascript
+    // phone number for each room 
+    const roomPhoneNumbers = {
+        911: 4137,
+        920: 4139,
+        921: 4138
+    };
+```
 
 ## 学年の計算方法
 
