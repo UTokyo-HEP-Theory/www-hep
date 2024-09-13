@@ -130,7 +130,7 @@ Promise.all(promises).then(data => {
 
             // phone number
             const phoneCell = document.createElement('td');
-            if (!(member.phone == null)) {
+            if ((member.phone !== null) && (member.phone !== undefined)) {
                 phoneCell.textContent = member.phone;
             } else if (roomPhoneNumbers.hasOwnProperty(member.roomNumber)) {
                 phoneCell.textContent = roomPhoneNumbers[member.roomNumber];
