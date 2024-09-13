@@ -74,6 +74,7 @@ li {
 
 table {
     width: 100%;
+    max-width: 1000px;
     border-collapse: collapse;
     margin: 10px 0 10px 0;
 }
