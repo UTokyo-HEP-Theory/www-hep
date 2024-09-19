@@ -47,8 +47,17 @@ function shouldDisplay(member) {
     const currentYear = currentDate.getFullYear();
     const currentMonth = currentDate.getMonth() + 1; // JavaScript months are 0-based
 
-    // Check if the leave date is in the past
-    if (member.period.leave !== null) {
+
+    // if the join date is in the future return false
+    if (member.period.join !== null && member.period.join !== undefined) {
+        if (member.period.join.year > currentYear ||
+            (member.period.join.year === currentYear && member.period.join.month > currentMonth)) {
+            return false;
+        }
+    }
+
+    // if the leave date is in the past return false
+    if (member.period.leave !== null && member.period.leave !== undefined) {
         if (member.period.leave.year < currentYear ||
             (member.period.leave.year === currentYear && member.period.leave.month < currentMonth)) {
             return false;
