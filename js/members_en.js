@@ -141,7 +141,11 @@ Promise.all(promises).then(data => {
 
             //email
             const emailCell = document.createElement('td');
-            emailCell.textContent = member.email;
+            if (member.email_domain !== null && member.email_domain !== undefined) {
+                emailCell.textContent = `${member.email}_at_${member.email_domain}`;
+            } else {
+                emailCell.textContent = member.email;
+            }
             row.appendChild(emailCell);
 
             // Add the row to the table
