@@ -1,26 +1,50 @@
 [
-{
-    "name": {
-        "lastName": "Kensuke",
-        "firstName": "Akita",
-        "lastNameJapanese": "秋田",
-        "firstNameJapanese": "謙介"
+    {
+        "name": {
+            "lastName": "Kensuke",
+            "firstName": "Akita",
+            "lastNameJapanese": "秋田",
+            "firstNameJapanese": "謙介"
+        },
+        "position": {
+            "english": "PD",
+            "japanese": "PD"
+        },
+        "period": {
+            "join": {
+                "year": 2024,
+                "month": 4
+            },
+            "leave": {
+                "year": 2027,
+                "month": 3
+            }
+        },
+        "roomNumber": "911",
+        "email": "kensuke"
     },
-    "position": 
-        {"english": "PD",
-         "japanese": "PD"
+    {
+        "name": {
+            "lastName": "Hor",
+            "firstName": "Shihwen",
+            "lastNameJapanese": "ホー",
+            "firstNameJapanese": "シーウェン"
         },
-    "period": {
-        "join": {
-            "year": 2024,
-            "month": 4
+        "position": {
+            "english": "PD",
+            "japanese": "PD"
         },
-        "leave": {
-            "year": 2027,
-            "month": 3
-        }
+        "period": {
+            "join": {
+                "year": 2024,
+                "month": 10
+            },
+            "leave": {
+                "year": 2025,
+                "month": 4
+            }
         },
-    "roomNumber": "911",
-    "email": "kensuke"
-}
+        "roomNumber": "920",
+        "email": "shihwen"
+    }
 ]
