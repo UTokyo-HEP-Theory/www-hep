@@ -42,7 +42,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const newUrl = new URL(newPath, url.origin);
 
         console.log('New URL:', newUrl.toString()); // デバッグ用ログ
-        
+
+        // Contains the language buttons
+        const langButtonContainer = document.createElement('div');
+        langButtonContainer.className = 'lang-button-container';
+
         // 日本語ボタンを作成
         const jpButton = document.createElement('button');
         jpButton.textContent = '日本語';
@@ -62,10 +66,18 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             enButton.onclick = () => window.location.href = newUrl.toString();
         }
-        
-        // ボタンをヘッダーに追加
+
+        // ボタンをコンテナに追加
+        langButtonContainer.appendChild(jpButton);
+        langButtonContainer.appendChild(enButton);
+
+        // コンテナをヘッダーに追加
         const header = document.querySelector('header');
-        header.appendChild(jpButton);
-        header.appendChild(enButton);
+        header.appendChild(langButtonContainer);
+
+        // ボタンをヘッダーに追加
+        //const header = document.querySelector('header');
+        //header.appendChild(jpButton);
+        //header.appendChild(enButton);
     }
 });
