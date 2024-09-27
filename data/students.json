@@ -340,5 +340,22 @@
         },
         "roomNumber": "911",
         "email": "shun-f-ivu"
+    },
+    {
+        "name": {
+            "lastName": "Zhu",
+            "firstName": "Yikai",
+            "lastNameJapanese": "诸",
+            "firstNameJapanese": "怿恺"
+        },
+        "position": null,
+        "period": {
+            "join": {
+                "year": 2024,
+                "month": 10
+            }
+        },
+        "roomNumber": null,
+        "email": "yikai-zhu"
     }
 ]
