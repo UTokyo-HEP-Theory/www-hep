@@ -5,6 +5,9 @@ const roomPhoneNumbers = {
     921: 4138
 };
 
+// デフォルトの email ドメイン
+const defaultDomain = 'hep-th.phys.s.u-tokyo.ac.jp';
+
 // Function to calculate numerical grade based on join date
 function calculateGradeNum(joinYear, joinMonth) {
     // デバッグ用クエリパラメータの取得
@@ -47,8 +50,17 @@ function shouldDisplay(member) {
     const currentYear = currentDate.getFullYear();
     const currentMonth = currentDate.getMonth() + 1; // JavaScript months are 0-based
 
-    // Check if the leave date is in the past
-    if (member.period.leave !== null) {
+
+    // if the join date is in the future return false
+    if (member.period.join !== null && member.period.join !== undefined) {
+        if (member.period.join.year > currentYear ||
+            (member.period.join.year === currentYear && member.period.join.month > currentMonth)) {
+            return false;
+        }
+    }
+
+    // if the leave date is in the past return false
+    if (member.period.leave !== null && member.period.leave !== undefined) {
         if (member.period.leave.year < currentYear ||
             (member.period.leave.year === currentYear && member.period.leave.month < currentMonth)) {
             return false;
@@ -67,14 +79,47 @@ function shouldDisplay(member) {
     return true;
 }
 
+
+// Function to copy text to the clipboard
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(
+        function() {
+            console.log('Successfully copied to clipboard');
+        },
+        function(err) {
+            console.error('Failed to copy to clipboard', err);
+        }
+    );
+}
+
+
+// Function to show notification when text is copied
+function showNotification(notificationElement) {
+    // Hide any visible notification
+    document.querySelectorAll('.notification.visible').forEach(element => {
+        element.classList.remove('visible');
+    });
+
+    // Show the current notification
+    notificationElement.classList.add('visible');
+
+    // Hide current notification after 2 seconds
+    setTimeout(() => {
+        notificationElement.classList.remove('visible');
+    }, 2000);
+}
+
 // ファイルのリスト
 //const files = ['data/staff.json', 'data/postdoc.json', 'data/students.json'];
 const files = ['../data/staffs.json','../data/postdocs.json','../data/students.json'];
 
+
 // 各ファイルを非同期に読み込む
 const promises = files.map(file => fetch(file).then(response => response.json()));
 
-// 全てのファイルが読み込まれたら
+
+
+
 Promise.all(promises).then(data => {
     // Get the table element
     const table = document.getElementById('members-table');
@@ -118,12 +163,11 @@ Promise.all(promises).then(data => {
             row.appendChild(positionCell);
 
             // room number
-
             const roomCell = document.createElement('td');
             roomCell.textContent = member.roomNumber;
             row.appendChild(roomCell);
 
-            //phone number 
+            // phone number 
             const phoneCell = document.createElement('td');
             if ((member.phone !== null) && (member.phone !== undefined)) {
                 phoneCell.textContent = member.phone;
@@ -134,10 +178,30 @@ Promise.all(promises).then(data => {
             }
             row.appendChild(phoneCell);
 
-            //email
+            // email
             const emailCell = document.createElement('td');
-            emailCell.textContent = member.email;
+            const emailDomain = member.email_domain || defaultDomain;
+            const email = `${member.email}@${emailDomain}`;
+            const displayEmail = member.email + (emailDomain === defaultDomain ? '' : `_at_${emailDomain}`);
+            emailCell.innerHTML = `
+            <div class="clipboard-container">
+                <span class="clipboard-icon" style="cursor: pointer;">📋</span>
+                <div class="notification">Copied!</div>
+            </div>
+            <span>${displayEmail}</span>
+        `;
+
+            const clipboardIcon = emailCell.querySelector('.clipboard-icon');
+            const notificationElement = emailCell.querySelector('.notification');
+
+            clipboardIcon.addEventListener('click', () => {
+                copyToClipboard(email);
+                showNotification(notificationElement);
+            });
+
             row.appendChild(emailCell);
+
+
 
             // Add the row to the table
             table.appendChild(row);

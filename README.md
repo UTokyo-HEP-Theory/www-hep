@@ -242,6 +242,7 @@ git push origin main
 - `roomNumber`: メンバーの部屋番号です。
 - `phone`: メンバーの電話番号です。教授, 准教授, 秘書以外は*部屋番号から生成するので入力しないでください。*
 - `email`: メンバーのメールアドレスのローカル部分です（@の前の部分）。
+- `email_domain`: (通常省略) メンバーのメールアドレスのドメイン部分です（@の後の部分）。"hep-th.phys.s.u-tokyo.ac.jp"の場合は省略してください。
 - `websites`: メンバーのwebsiteを配列で指定します。(例: ["https://googl.com","https://yahoo.com"])。ない場合は書かないか、null。
 - `exclude`: true なら強制非表示 (通常レコードに含めない)
 

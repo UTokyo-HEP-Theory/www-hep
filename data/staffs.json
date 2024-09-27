@@ -132,7 +132,8 @@
         },
         "roomNumber": "",
         "phone": "4017",
-        "email": "shimasaki.marina_at_mail.u-tokyo.ac.jp",
+        "email": "shimasaki.marina",
+        "email_domain": "mail.u-tokyo.ac.jp",
         "websites": []
     }
 ]

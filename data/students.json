@@ -109,6 +109,24 @@
     },
     {
         "name": {
+            "lastName": "Li",
+            "firstName": "Qiang",
+            "lastNameJapanese": "李",
+            "firstNameJapanese": "強"
+        },
+        "position": null,
+        "period": {
+            "join": {
+                "year": "2019",
+                "month": "10"
+            },
+            "leave": null
+        },
+        "roomNumber": "921",
+        "email": "qiangli"
+    },
+    {
+        "name": {
             "lastName": "Osaki",
             "firstName": "Genta",
             "lastNameJapanese": "尾崎",
@@ -181,21 +199,21 @@
     },
     {
         "name": {
-            "lastName": "Li",
-            "firstName": "Qiang",
-            "lastNameJapanese": "李",
-            "firstNameJapanese": "強"
+            "lastName": "To",
+            "firstName": "Alethea Glen",
+            "lastNameJapanese": "アレーティア",
+            "firstNameJapanese": "トゥー グレン"
         },
         "position": null,
         "period": {
             "join": {
-                "year": "2019",
+                "year": "2020",
                 "month": "10"
             },
             "leave": null
         },
-        "roomNumber": "921",
-        "email": "qiangli"
+        "roomNumber": "920",
+        "email": "alethea.t.0124"
     },
     {
         "name": {
@@ -217,21 +235,21 @@
     },
     {
         "name": {
-            "lastName": "To",
-            "firstName": "Alethea Glen",
-            "lastNameJapanese": "アレーティア",
-            "firstNameJapanese": "トゥー グレン"
+            "lastName": "Wei",
+            "firstName": "Shang-Fu",
+            "lastNameJapanese": "ウェイ",
+            "firstNameJapanese": "シャンフー"
         },
         "position": null,
         "period": {
             "join": {
-                "year": "2020",
+                "year": "2021",
                 "month": "10"
             },
             "leave": null
         },
-        "roomNumber": "920",
-        "email": "alethea.t.0124"
+        "roomNumber": "911",
+        "email": "sfwei"
     },
     {
         "name": {
@@ -286,24 +304,6 @@
         },
         "roomNumber": "911",
         "email": "tyokoyama"
-    },
-    {
-        "name": {
-            "lastName": "Wei",
-            "firstName": "Shang-Fu",
-            "lastNameJapanese": "ウェイ",
-            "firstNameJapanese": "シャンフー"
-        },
-        "position": null,
-        "period": {
-            "join": {
-                "year": "2021",
-                "month": "10"
-            },
-            "leave": null
-        },
-        "roomNumber": "911",
-        "email": "sfwei"
     },
     {
         "name": {
