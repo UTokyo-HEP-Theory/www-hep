@@ -348,14 +348,17 @@
             "lastNameJapanese": "诸",
             "firstNameJapanese": "怿恺"
         },
-        "position": "M1",
+        "position": {
+            "english": "M1",
+            "japanese": "M1",
+        },
         "period": {
             "join": {
                 "year": 2024,
                 "month": 10
             }
         },
-        "roomNumber": null,
+        "roomNumber": "921",
         "email": "yikai-zhu"
     }
 ]
