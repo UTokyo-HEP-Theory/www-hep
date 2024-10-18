@@ -12,23 +12,8 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Get the user's browser language
-        const userLang = navigator.language || navigator.userLanguage;
-        
-        // Define your supported languages
-        const supportedLanguages = ['en', 'ja'];
-        
-        // Default language if the user's language is not supported
-        const defaultLang = 'en';
-        
-        // Extract the language code from the user's language
-        const lang = userLang.split('-')[0];
-        
-        // Check if the user's language is supported
-        const targetLang = supportedLanguages.includes(lang) ? lang : defaultLang;
-        
         // Redirect the user to the appropriate language version
-        window.location.href = `${targetLang}/index.html`;
+        window.location.href = `ja/index.html`;
     });
 </script>
 

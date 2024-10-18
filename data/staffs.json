@@ -43,6 +43,30 @@
     },
     {
         "name": {
+            "lastName": "Yamazaki",
+            "firstName": "Masahito",
+            "lastNameJapanese": "山崎",
+            "firstNameJapanese": "雅人"
+        },
+        "position": {
+            "english": "Professor",
+            "japanese": "教授"
+        },
+        "period": {
+            "join": {
+                "year": 2024,
+                "month": 10
+            },
+            "leave": null
+        },
+        "roomNumber": "918",
+        "phone": "",
+        "email": "yamazaki",
+        "websites": ["https://member.ipmu.jp/masahito.yamazaki/index-j.shtml"
+        ]
+    },
+    {
+        "name": {
             "lastName": "Hamaguchi",
             "firstName": "Koichi",
             "lastNameJapanese": "濱口",
