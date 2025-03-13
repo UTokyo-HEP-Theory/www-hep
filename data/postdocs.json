@@ -46,5 +46,27 @@
         },
         "roomNumber": "920",
         "email": "shihwen"
+    },
+    {
+      "name": {
+        "lastName": "Bao",
+        "firstName": "Jiakang",
+        "lastNameJapanese": "包",
+        "firstNameJapanese": "佳康"
+      },
+      "position": {
+        "english": "PD",
+        "japanese": "PD"
+      },
+      "period": {
+        "join": {
+          "year": 2025,
+          "month": 5
+        },
+        "leave": null
+      },
+      "roomNumber": null,
+      "phone": null,
+      "email": null
     }
 ]

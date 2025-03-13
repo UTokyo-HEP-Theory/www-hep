@@ -159,5 +159,27 @@
         "email": "shimasaki.marina",
         "email_domain": "mail.u-tokyo.ac.jp",
         "websites": []
+    },
+    {
+      "name": {
+        "lastName": "Watanabe",
+        "firstName": "Masataka",
+        "lastNameJapanese": "渡邉",
+        "firstNameJapanese": "真隆"
+      },
+      "position": {
+        "english": "Assistant Professor",
+        "japanese": "助教"
+      },
+      "period": {
+        "join": {
+          "year": 2025,
+          "month": 4
+        },
+        "leave": null
+      },
+      "roomNumber": null,
+      "phone": null,
+      "email": null
     }
 ]
