@@ -379,5 +379,24 @@
       "roomNumber": null,
       "phone": null,
       "email": "kasamaki"
+    },
+    {
+      "name": {
+        "lastName": "Kitagawa",
+        "firstName": "Haruto",
+        "lastNameJapanese": "北川",
+        "firstNameJapanese": "陽斗"
+      },
+      "position": null,
+      "period": {
+        "join": {
+          "year": 2025,
+          "month": 4
+        },
+        "leave": null
+      },
+      "roomNumber": null,
+      "phone": null,
+      "email": "kitagawa"
     }
 ]
