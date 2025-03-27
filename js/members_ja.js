@@ -16,7 +16,8 @@ function calculateGradeNum(joinYear, joinMonth) {
 
     // デバッグ用クエリパラメータの日付を優先する
     const currentDate = dateParam ? new Date(dateParam) : new Date();
-    let grade = currentDate.getFullYear() - joinYear;
+
+    let grade = currentDate.getFullYear() - joinYear+1;
     if (currentDate.getMonth() + 1 < joinMonth) {
         grade--;
     }
@@ -61,8 +62,10 @@ function shouldDisplay(member) {
 
     // if the leave date is in the past return false
     if (member.period.leave !== null && member.period.leave !== undefined) {
-        if (member.period.leave.year < currentYear ||
-            (member.period.leave.year === currentYear && member.period.leave.month < currentMonth)) {
+        const leaveYear = parseInt(member.period.leave.year, 10);
+        const leaveMonth = parseInt(member.period.leave.month, 10);
+        if (leaveYear < currentYear ||
+            (leaveYear === currentYear && leaveMonth < currentMonth)) {
             return false;
         }
     }

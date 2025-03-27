@@ -16,8 +16,9 @@ function calculateGradeNum(joinYear, joinMonth) {
 
     // デバッグ用クエリパラメータの日付を優先する
     const currentDate = dateParam ? new Date(dateParam) : new Date();
-    let grade = currentDate.getFullYear() - joinYear;
-    if (currentDate.getMonth() + 1 < joinMonth) {
+
+    let grade = currentDate.getFullYear() - Number(joinYear) + 1;
+    if (currentDate.getMonth() + 1 < Number(joinMonth)) {
         grade--;
     }
     return grade;
@@ -52,16 +53,18 @@ function shouldDisplay(member) {
 
     // if the join date is in the future return false
     if (member.period.join !== null && member.period.join !== undefined) {
-        if (member.period.join.year > currentYear ||
-            (member.period.join.year === currentYear && member.period.join.month > currentMonth)) {
+        if (Number(member.period.join.year) > currentYear ||
+            (Number(member.period.join.year) === currentYear && Number(member.period.join.month) > currentMonth)) {
             return false;
         }
     }
 
     // if the leave date is in the past return false
     if (member.period.leave !== null && member.period.leave !== undefined) {
-        if (member.period.leave.year < currentYear ||
-            (member.period.leave.year === currentYear && member.period.leave.month < currentMonth)) {
+        const leaveYear = parseInt(member.period.leave.year, 10);
+        const leaveMonth = parseInt(member.period.leave.month, 10);
+        if (leaveYear < currentYear ||
+            (leaveYear === currentYear && leaveMonth < currentMonth)) {
             return false;
         }
     }
@@ -69,7 +72,7 @@ function shouldDisplay(member) {
 
     // Check if the member has no position and is in grade 6 or above
     if (member.position === null) {
-        const grade = calculateGradeNum(member.period.join.year, member.period.join.month);
+        const grade = calculateGradeNum(Number(member.period.join.year), Number(member.period.join.month));
         if (grade >= 6) {
             return false;
         }
