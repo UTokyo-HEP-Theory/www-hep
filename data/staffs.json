@@ -134,7 +134,10 @@
             "japanese": "助教"
         },
         "period": {
-            "leave": null
+            "leave": {
+                "year": 2025,
+                "month": 10
+            }
         },
         "roomNumber": "920",
         "email": "kantaro",
