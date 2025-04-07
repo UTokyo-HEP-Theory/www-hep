@@ -376,7 +376,7 @@
         },
         "leave": null
       },
-      "roomNumber": null,
+      "roomNumber": 921,
       "phone": null,
       "email": "kasamaki"
     },
@@ -387,7 +387,7 @@
         "lastNameJapanese": "北川",
         "firstNameJapanese": "陽斗"
       },
-      "position": null,
+      "position": 920,
       "period": {
         "join": {
           "year": 2025,
@@ -395,7 +395,7 @@
         },
         "leave": null
       },
-      "roomNumber": null,
+      "roomNumber": 9,
       "phone": null,
       "email": "kitagawa"
     }
