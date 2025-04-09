@@ -387,7 +387,7 @@
         "lastNameJapanese": "北川",
         "firstNameJapanese": "陽斗"
       },
-      "position": 920,
+      "position": null,
       "period": {
         "join": {
           "year": 2025,
@@ -395,7 +395,7 @@
         },
         "leave": null
       },
-      "roomNumber": 9,
+      "roomNumber": 920,
       "phone": null,
       "email": "kitagawa"
     }
