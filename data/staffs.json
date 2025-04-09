@@ -144,26 +144,6 @@
         "websites": []
     },
     {
-        "name": {
-            "lastName": "Shimasaki",
-            "firstName": "Marina",
-            "lastNameJapanese": "島﨑",
-            "firstNameJapanese": "茉璃奈"
-        },
-        "position": {
-            "english": "Secretary",
-            "japanese": "秘書"
-        },
-        "period": {
-            "leave": null
-        },
-        "roomNumber": "",
-        "phone": "4017",
-        "email": "shimasaki.marina",
-        "email_domain": "mail.u-tokyo.ac.jp",
-        "websites": []
-    },
-    {
       "name": {
         "lastName": "Watanabe",
         "firstName": "Masataka",
@@ -184,5 +164,25 @@
       "roomNumber": null,
       "phone": null,
       "email": null
+    },
+    {
+        "name": {
+            "lastName": "Shimasaki",
+            "firstName": "Marina",
+            "lastNameJapanese": "島﨑",
+            "firstNameJapanese": "茉璃奈"
+        },
+        "position": {
+            "english": "Secretary",
+            "japanese": "秘書"
+        },
+        "period": {
+            "leave": null
+        },
+        "roomNumber": "",
+        "phone": "4017",
+        "email": "shimasaki.marina",
+        "email_domain": "mail.u-tokyo.ac.jp",
+        "websites": []
     }
 ]
