@@ -8,6 +8,8 @@ const roomPhoneNumbers = {
 // デフォルトの email ドメイン
 const defaultDomain = 'hep-th.phys.s.u-tokyo.ac.jp';
 
+const isJapanese = document.documentElement.lang === 'ja';
+
 // Function to calculate numerical grade based on join date
 function calculateGradeNum(joinYear, joinMonth) {
     // デバッグ用クエリパラメータの取得
@@ -137,10 +139,19 @@ Promise.all(promises).then(data => {
             // Create a new row
             const row = document.createElement('tr');
 
+            const nameCellEnglish = document.createElement('td');
+            let mainNameCell = nameCellEnglish;
             // Create cells for each property
-            const nameCellJapanese = document.createElement('td');
-            nameCellJapanese.textContent = member.name.lastNameJapanese + ' ' + member.name.firstNameJapanese;
-            row.appendChild(nameCellJapanese);
+            if (isJapanese) {
+                // not display the name in Japanese if the page is in English
+                const nameCellJapanese = document.createElement('td');
+                nameCellJapanese.textContent = member.name.lastNameJapanese + ' ' + member.name.firstNameJapanese;
+                row.appendChild(nameCellJapanese);
+                mainNameCell = nameCellJapanese;
+            }
+
+            nameCellEnglish.textContent = member.name.firstName + ' ' + member.name.lastName;
+            row.appendChild(nameCellEnglish);
 
             // If the member has websites, add a link emoji for each one
             if (member.websites) {
@@ -149,19 +160,15 @@ Promise.all(promises).then(data => {
                     link.href = website;
                     link.textContent = ' 🔗';
                     link.style.textDecoration = 'none';
-                    nameCellJapanese.appendChild(link);
+                    mainNameCell.appendChild(link);
                 });
             }
-
-            const nameCellEnglish = document.createElement('td');
-            nameCellEnglish.textContent = member.name.firstName + ' ' + member.name.lastName;
-            row.appendChild(nameCellEnglish);
 
             const positionCell = document.createElement('td');
             if (member.position === null) {
                 positionCell.textContent = calculateGrade(member.period.join.year, member.period.join.month);
             } else {
-                positionCell.textContent = member.position.japanese;
+                positionCell.textContent = isJapanese ? member.position.japanese : member.position.english;
             }
             row.appendChild(positionCell);
 
@@ -183,24 +190,28 @@ Promise.all(promises).then(data => {
 
             // email
             const emailCell = document.createElement('td');
-            const emailDomain = member.email_domain || defaultDomain;
-            const email = `${member.email}@${emailDomain}`;
-            const displayEmail = member.email + (emailDomain === defaultDomain ? '' : `_at_${emailDomain}`);
-            emailCell.innerHTML = `
-            <div class="clipboard-container">
-                <span class="clipboard-icon" style="cursor: pointer;">📋</span>
-                <div class="notification">Copied!</div>
-            </div>
-            <span>${displayEmail}</span>
-        `;
+            if (member.email) {
+                const emailDomain = member.email_domain || defaultDomain;
+                const email = `${member.email}@${emailDomain}`;
+                const displayEmail = member.email + (emailDomain === defaultDomain ? '' : `_at_${emailDomain}`);
+                emailCell.innerHTML = `
+                <div class="clipboard-container">
+                    <span class="clipboard-icon" style="cursor: pointer;">📋</span>
+                    <div class="notification">Copied!</div>
+                </div>
+                <span>${displayEmail}</span>
+            `;
 
-            const clipboardIcon = emailCell.querySelector('.clipboard-icon');
-            const notificationElement = emailCell.querySelector('.notification');
+                const clipboardIcon = emailCell.querySelector('.clipboard-icon');
+                const notificationElement = emailCell.querySelector('.notification');
 
-            clipboardIcon.addEventListener('click', () => {
-                copyToClipboard(email);
-                showNotification(notificationElement);
-            });
+                clipboardIcon.addEventListener('click', () => {
+                    copyToClipboard(email);
+                    showNotification(notificationElement);
+                });
+            } else {
+                emailCell.textContent = '';
+            }
 
             row.appendChild(emailCell);
 
