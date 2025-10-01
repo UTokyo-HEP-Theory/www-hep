@@ -64,8 +64,8 @@ function shouldDisplay(member) {
 
     // if the leave date is in the past return false
     if (member.period.leave !== null && member.period.leave !== undefined) {
-        const leaveYear = parseInt(member.period.leave.year, 10);
-        const leaveMonth = parseInt(member.period.leave.month, 10);
+        const leaveYear = member.period.leave.year;
+        const leaveMonth = member.period.leave.month;
         if (leaveYear < currentYear ||
             (leaveYear === currentYear && leaveMonth < currentMonth)) {
             return false;
