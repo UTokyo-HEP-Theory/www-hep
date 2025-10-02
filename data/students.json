@@ -398,5 +398,39 @@
       "roomNumber": 920,
       "phone": null,
       "email": "kitagawa"
+    },
+    {
+        "name": {
+            "lastName": "Zheng",
+            "firstName": "Bufan",
+            "lastNameJapanese": "郑",
+            "firstNameJapanese": "卜凡"
+        },
+        "position": null,
+        "period": {
+            "join": {
+                "year": 2025,
+                "month": 10
+            }
+        },
+        "roomNumber": "921",
+        "email": null
+    },
+    {
+        "name": {
+            "lastName": "Kim",
+            "firstName": "Giwan",
+            "lastNameJapanese": "金",
+            "firstNameJapanese": "杞玩"
+        },
+        "position": null,
+        "period": {
+            "join": {
+                "year": 2025,
+                "month": 10
+            }
+        },
+        "roomNumber": "920",
+        "email": null
     }
 ]
