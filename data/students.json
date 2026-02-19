@@ -156,7 +156,10 @@
                 "year": 2021,
                 "month": 4
             },
-            "leave": null
+            "leave": {
+                "year": 2027,
+                "month": 3
+            }
         },
         "roomNumber": "920",
         "email": "shimamura"
