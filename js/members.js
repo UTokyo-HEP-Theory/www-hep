@@ -73,7 +73,7 @@ function shouldDisplay(member) {
     }
 
     // Check if the member has no position and is in grade 6 or above
-    if (member.position === null) {
+    if (member.position === null && member.period.leave === null) {
         const grade = calculateGradeNum(member.period.join.year, member.period.join.month);
         if (grade >= 6) {
             return false;
