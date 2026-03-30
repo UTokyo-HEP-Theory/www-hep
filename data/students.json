@@ -432,5 +432,22 @@
         },
         "roomNumber": "920",
         "email": null
+    },
+    {
+        "name": {
+            "lastName": "Kei",
+            "firstName": "Kaneda",
+            "lastNameJapanese": "金田",
+            "firstNameJapanese": "啓"
+        },
+        "position": null,
+        "period": {
+            "join": {
+                "year": 2026,
+                "month": 4
+            }
+        },
+        "roomNumber": "920",
+        "email": "kaneda"
     }
 ]
