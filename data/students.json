@@ -452,5 +452,22 @@
         },
         "roomNumber": "920",
         "email": "kaneda"
+    },
+    {
+        "name": {
+            "lastName": "Ryuto",
+            "firstName": "Amada",
+            "lastNameJapanese": "天田",
+            "firstNameJapanese": "琉仁"
+        },
+        "position": null,
+        "period": {
+            "join": {
+                "year": 2026,
+                "month": 4
+            }
+        },
+        "roomNumber": "921",
+        "email": "amada"
     }
 ]
