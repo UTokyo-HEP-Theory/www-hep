@@ -68,5 +68,33 @@
       "roomNumber": 920,
       "phone": null,
       "email": "jiakang.bao"
+    },
+    {
+        "name": {
+            "lastName": "Matsuo",
+            "firstName": "Yutaka",
+            "lastNameJapanese": "松尾",
+            "firstNameJapanese": "泰"
+        },
+        "position": {
+            "english": "Visiting researcher",
+            "japanese": "客員共同研究員"
+        },
+        "period": {
+            "join": {
+	    	"year": 2026,
+		"month": 4
+	    },
+            "leave": {
+	    	"year": 2028,
+		"month": 3
+	    }
+        },
+        "roomNumber": "914",
+        "phone": "4180",
+        "email": "matsuo",
+        "websites": [
+            "https://www-hep.phys.s.u-tokyo.ac.jp/~matsuo/"
+        ]
     }
 ]
