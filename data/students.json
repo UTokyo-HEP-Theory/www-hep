@@ -267,7 +267,10 @@
                 "year": 2023,
                 "month": 4
             },
-            "leave": null
+            "leave": {
+		"year": 2026,
+		"month": 3
+	    }
         },
         "roomNumber": "921",
         "email": "zhiyi-fan"
@@ -434,7 +437,7 @@
             }
         },
         "roomNumber": "920",
-        "email": null
+        "email": "giwan-kim"
     },
     {
         "name": {
