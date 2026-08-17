@@ -345,7 +345,10 @@
                 "year": 2024,
                 "month": 4
             },
-            "leave": null
+            "leave": {
+                "year": 2026,
+                "month": 3
+            }
         },
         "roomNumber": "911",
         "email": "shun-f-ivu"
