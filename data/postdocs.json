@@ -63,11 +63,36 @@
           "year": 2025,
           "month": 5
         },
-        "leave": null
+        "leave": {
+          "year": 2026,
+          "month": 8
+        }
       },
       "roomNumber": 920,
       "phone": null,
       "email": "jiakang.bao"
+    },
+    {
+      "name": {
+        "lastName": "Parayil Mana",
+        "firstName": "Aswin",
+        "lastNameJapanese": "パライル マナ",
+        "firstNameJapanese": "アシュウィン"
+      },
+      "position": {
+        "english": "PD",
+        "japanese": "PD"
+      },
+      "period": {
+        "join": {
+          "year": 2026,
+          "month": 8
+        },
+        "leave": null
+      },
+      "roomNumber": "920",
+      "phone": null,
+      "email": "aswin.parayil.mana"
     },
     {
         "name": {
