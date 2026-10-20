@@ -475,5 +475,23 @@
         },
         "roomNumber": "921",
         "email": "amada"
+    },
+    {
+        "name": {
+            "lastName": "Tong",
+            "firstName": "Shicheng",
+            "lastNameJapanese": "童",
+            "firstNameJapanese": "士城"
+        },
+        "position": null,
+        "period": {
+            "join": {
+                "year": 2026,
+                "month": 10
+            },
+            "leave": null
+        },
+        "roomNumber": "921",
+        "email": "shicheng-tong"
     }
 ]
